@@ -11,7 +11,7 @@ namespace StarWarsAPI
 {
     public static class CharacterDeleteById
     {
-        [OpenApiOperation(operationId: nameof(CharacterDeleteById), tags: new[] { "Character" }, Description = "Deletes character by the unique identifier.")]
+        [OpenApiOperation(operationId: nameof(CharacterDeleteById), tags: new[] { "Character" }, Summary = "Deletes character by the unique identifier.")]
         [OpenApiParameter(name: "id", Description = "The unique identifier.", Required = true)]
         [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
         [FunctionName(nameof(CharacterDeleteById))]

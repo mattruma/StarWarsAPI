@@ -13,7 +13,7 @@ namespace StarWarsAPI
 {
     public static class CharacterAdd
     {
-        [OpenApiOperation(operationId: nameof(CharacterAdd), tags: new[] { "Character" }, Description = "Adds a character.")]
+        [OpenApiOperation(operationId: nameof(CharacterAdd), tags: new[] { "Character" }, Summary = "Adds a character.")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "application/json", bodyType: typeof(Character), Description = "Returns a character.")]
         [FunctionName(nameof(CharacterAdd))]
         public static async Task<IActionResult> Run(

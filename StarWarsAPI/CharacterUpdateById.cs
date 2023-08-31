@@ -15,8 +15,8 @@ namespace StarWarsAPI
 {
     public static class CharacterUpdateById
     {
-        [OpenApiOperation(operationId: nameof(CharacterUpdateById), tags: new[] { "Character" }, Description = "Updates a character by the unique identifier.")]
-        [OpenApiParameter(name: "id", Description = "The unique identifier.", Required = true)]
+        [OpenApiOperation(operationId: nameof(CharacterUpdateById), tags: new[] { "Character" }, Summary = "Updates a character by the unique identifier.")]
+        [OpenApiParameter(name: "id", Summary = "The unique identifier.", Required = true)]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(Character), Description = "Returns a character.")]
         [FunctionName(nameof(CharacterUpdateById))]
         public static async Task<IActionResult> Run(
