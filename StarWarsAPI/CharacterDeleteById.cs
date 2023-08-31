@@ -5,12 +5,15 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
 using StarWarsAPI.Shared;
 using System.Collections.Generic;
+using System.Net;
 
 namespace StarWarsAPI
 {
     public static class CharacterDeleteById
     {
         [OpenApiOperation(operationId: nameof(CharacterDeleteById), tags: new[] { "Character" }, Description = "Deletes character by the unique identifier.")]
+        [OpenApiParameter(name: "id", Description = "The unique identifier.", Required = true)]
+        [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
         [FunctionName(nameof(CharacterDeleteById))]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "characters/{id}")] HttpRequest req,

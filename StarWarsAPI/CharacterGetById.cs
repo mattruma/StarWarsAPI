@@ -13,6 +13,7 @@ namespace StarWarsAPI
     public static class CharacterGetById
     {
         [OpenApiOperation(operationId: nameof(CharacterGetById), tags: new[] { "Character" }, Description = "Gets a character by the unique identifier.")]
+        [OpenApiParameter(name: "id", Description = "The unique identifier.", Required = true)]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(Character), Description = "Returns a character.")]
         [FunctionName(nameof(CharacterGetById))]
         public static IActionResult Run(

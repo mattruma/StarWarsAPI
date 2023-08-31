@@ -19,6 +19,6 @@ namespace StarWarsAPI
             }
         };
 
-        public override OpenApiVersionType OpenApiVersion { get; set; } = OpenApiVersionType.V3;
+        public override OpenApiVersionType OpenApiVersion { get; set; } = OpenApiVersionType.V2;
     }
 }
