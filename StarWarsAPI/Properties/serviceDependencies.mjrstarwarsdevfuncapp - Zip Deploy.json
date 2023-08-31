@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/mjrstarwarsdevfuncappappi",
+      "type": "appInsights.azure",
+      "connectionId": "APPLICATIONINSIGHTS_CONNECTION_STRING"
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/mjrstarwarsdevfuncapp/providers/Microsoft.ServiceLinker/linkers/AzureWebJobsStorage_D63EE0236D, /subscriptions/ce96c170-76ec-4831-b2f5-1e3f26a9e5b2/resourceGroups/mjrstarwarsdevrg/providers/Microsoft.Web/sites/mjrstarwarsdevfuncapp/providers/Microsoft.ServiceLinker/linkers/AzureWebJobsStorage_78B02A6757",
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/mjrstarwarsdevfuncappst",
+      "type": "storage.azure",
+      "connectionId": "AzureWebJobsStorage"
+    }
+  }
+}
