@@ -17,7 +17,7 @@ namespace StarWarsAPI
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(Character), Description = "Returns a character.")]
         [FunctionName(nameof(CharacterGetById))]
         public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "characters/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "characters/{id}")] HttpRequest req,
             [Sql(commandText: "SELECT * FROM Character WHERE CharacterID = @CharacterID",
                 commandType: System.Data.CommandType.Text,
                 parameters: "@CharacterID={id}",

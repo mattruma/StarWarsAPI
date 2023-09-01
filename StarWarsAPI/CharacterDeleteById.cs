@@ -16,7 +16,7 @@ namespace StarWarsAPI
         [OpenApiResponseWithoutBody(statusCode: HttpStatusCode.OK)]
         [FunctionName(nameof(CharacterDeleteById))]
         public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "characters/{id}")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "characters/{id}")] HttpRequest req,
             [Sql(commandText: "DELETE FROM Character WHERE CharacterID = @CharacterID",
                 commandType: System.Data.CommandType.Text,
                 parameters: "@CharacterID={id}",

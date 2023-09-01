@@ -18,7 +18,7 @@ namespace StarWarsAPI
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.Created, contentType: "application/json", bodyType: typeof(Character), Description = "Returns a character.")]
         [FunctionName(nameof(CharacterAdd))]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "characters")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = "characters")] HttpRequest req,
             [Sql(commandText: "Character",
                 connectionStringSetting: "SqlConnectionString")] IAsyncCollector<CharacterData> charactersAdded)
         {

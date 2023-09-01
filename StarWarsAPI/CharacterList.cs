@@ -16,7 +16,7 @@ namespace StarWarsAPI
         [OpenApiOperation(operationId: nameof(CharacterList), tags: new[] { "Character" }, Summary = "Gets a list of characters.")]
         [OpenApiResponseWithBody(statusCode: HttpStatusCode.OK, contentType: "application/json", bodyType: typeof(IEnumerable<Character>), Description = "Returns a list of characters.")]
         public static IActionResult Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "characters")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", Route = "characters")] HttpRequest req,
             [Sql(commandText: "SELECT * FROM Character ORDER BY name",
                 commandType: System.Data.CommandType.Text,
                 connectionStringSetting: "SqlConnectionString")] IEnumerable<CharacterData> characters)
